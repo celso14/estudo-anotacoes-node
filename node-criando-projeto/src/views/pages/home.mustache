@@ -1,0 +1,37 @@
+{{ >partials/header }}
+
+    <p> {{ user.name }}, {{ user.lastName}}, Aprendendo Node.ts</p>
+    
+    {{ #user.showOld }}
+        Como vai a vida?
+    {{ /user.showOld }}
+    {{ ^user.showOld }}
+        Coé Doidão
+    {{ /user.showOld }}
+
+    <hr/>
+
+    <ul>
+        {{ #user.produts }}
+            {{ >partials/productItem }}
+        {{ /user.produts }}
+    </ul>
+
+    <hr/>
+    
+    <ul>
+        {{ #user.expensives }}
+            {{ >partials/productItem }}
+        {{ /user.expensives}}
+    </ul>
+
+    <ul>
+        {{ #user.lista }}
+            <li>{{ . }}</li>
+        {{ /user.lista }}
+        {{ ^user.lista }}
+            Não há frases.
+        {{ /user.lista }}
+    </ul>
+
+{{ >partials/footer }}
